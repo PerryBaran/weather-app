@@ -17,7 +17,7 @@ function ForecastMoreDetails({ forecasts }) {
 
   return (
     <div className="forecast-details">
-      <h2>{date}</h2>
+      <h2 className="forecast-details__heading">{date}</h2>
       <ForecastBreakdown
         icon={icon}
         temp={temp}
