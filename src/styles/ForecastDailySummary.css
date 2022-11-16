@@ -11,10 +11,14 @@
   text-align: center;
 }
 
-.forecast-daily-summary > p {
+.forecast-daily-summary > p{
   font-size: min(1.2rem, 3cqw);
   color: var(--almost-white);
   text-shadow: 1px 1px 2px var(--almost-black);
+}
+
+.forecast-daily-summary__line-break {
+  display: block;
 }
 
 .forecast-daily-summary__icon {
@@ -46,7 +50,11 @@
 }
 
 @media (min-width: 900px) {
-  .forecast-daily-summary br {
-    display: none;
+  .forecast-daily-summary__line-break {
+    display: inline;
+  }
+
+  .forecast-daily-summary__line-break::before {
+    content: " ";
   }
 }

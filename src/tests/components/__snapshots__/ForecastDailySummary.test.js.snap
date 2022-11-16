@@ -7,9 +7,14 @@ exports[`ForecastDailySummary snapshot 1`] = `
     data-testid="forecast-daily-summary"
   >
     <p>
-      Thu 
-      <br />
-       Jan 01
+      <span>
+        Thu
+      </span>
+      <span
+        class="forecast-daily-summary__line-break"
+      >
+         Jan 01
+      </span>
     </p>
     <div
       class="forecast-daily-summary__icon"
@@ -21,9 +26,14 @@ exports[`ForecastDailySummary snapshot 1`] = `
       />
     </div>
     <p>
-      broken 
-      <br />
-      clouds
+      <span>
+        broken
+      </span>
+      <span
+        class="forecast-daily-summary__line-break"
+      >
+        clouds
+      </span>
     </p>
     <p>
       20°C

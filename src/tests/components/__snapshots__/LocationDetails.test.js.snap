@@ -7,3 +7,11 @@ exports[`LocationDetails no error message snapshot 1`] = `
   </h1>
 </DocumentFragment>
 `;
+
+exports[`LocationDetails snapshot 1`] = `
+<DocumentFragment>
+  <h1>
+    Leeds, GB
+  </h1>
+</DocumentFragment>
+`;

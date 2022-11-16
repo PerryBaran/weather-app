@@ -4,7 +4,6 @@
   justify-content: space-between;
   flex: 1 1 auto;
   text-align: center;
-  min-height: 350px;
   padding: 20px;
 }
 
@@ -14,11 +13,16 @@
   align-items: flex-start;
 }
 
-.forecast-breakdown__left h3, .forecast-breakdown__left h3 + p {
+.forecast-breakdown__left h3, 
+.forecast-breakdown__left h3 + p {
   display: inline;
+  font-size: inherit;
 }
 
-.forecast-breakdown__left > div > * {
+.forecast-breakdown__min-temp,
+.forecast-breakdown__max-temp,
+.forecast-breakdown__humidity,
+.forecast-breakdown__wind-speed {
   font-size: min(1.3rem, 3vw);
 }
 
@@ -27,7 +31,7 @@
 }
 
 .forecast-breakdown__right i {
-  font-size: min(13rem, 18vw);
+  font-size: min(10rem, 18vw);
 }
 
 .forecast-breakdown__right p {

@@ -13,9 +13,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         00:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
     <div
@@ -26,9 +31,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         03:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
     <div
@@ -39,9 +49,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         06:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
     <div
@@ -52,9 +67,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         09:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
     <div
@@ -65,9 +85,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         12:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
     <div
@@ -87,9 +112,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        really 
-        <br />
-        cold
+        <span>
+          really
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          cold
+        </span>
       </p>
       <p>
         12.0°C
@@ -112,9 +142,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        less 
-        <br />
-        cold
+        <span>
+          less
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          cold
+        </span>
       </p>
       <p>
         22.0°C
@@ -128,9 +163,14 @@ exports[`ForecastTrihourlySummaries snapshot 1`] = `
         21:00
       </p>
       <p>
-        No 
-        <br />
-        Data
+        <span>
+          No
+        </span>
+        <span
+          class="forecast-trihourly-summary__line-break"
+        >
+          Data
+        </span>
       </p>
     </div>
   </div>

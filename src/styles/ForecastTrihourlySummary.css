@@ -20,6 +20,10 @@
   text-shadow: 1px 1px 2px var(--almost-white);
 }
 
+.forecast-trihourly-summary__line-break {
+  display: block;
+}
+
 .forecast-trihourly-summary__icon {
   font-size: min(4rem, 5cqw);
 }

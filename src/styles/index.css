@@ -18,6 +18,8 @@
   --text-shadow-black: 2px 2px 2px var(--almost-black);
   --box-shadow-white: 0 0 10px var(--almost-white);
   --border-dark-blue: 2px solid var(--dark-blue);
+  --top-bar-height: 60px;
+  --top-bar-border: 2px solid var(--dark-blue);
 }
 
 body {
@@ -34,4 +36,10 @@ sup {
   text-shadow: inherit;
   font-size: 50%;
   font-weight: 100;
+}
+
+span {
+  font-size: inherit;
+  color: inherit;
+  text-shadow: inherit;
 }

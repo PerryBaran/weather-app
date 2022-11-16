@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ForecastMoreDetails from "../../components/ForecastMoreDetails";
 import dateString from "../../helpers/dateString";
 import { calcMax, calcMean, calcMin } from "../../helpers/calculateValues";
@@ -29,32 +29,35 @@ describe("ForecastMoreDetails", () => {
       windSpeed: 90,
     },
   ];
-  let screen;
-
-  beforeEach(() => {
-    screen = render(<ForecastMoreDetails forecasts={forecasts} />);
-  });
 
   test("snapshot", () => {
-    const { asFragment } = screen;
+    const { asFragment } = render(
+      <ForecastMoreDetails forecasts={forecasts} />
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("data is properly manipulated", () => {
-    const { getByText } = screen;
-    const date = dateString(forecasts[0].dateTime);
-    const temp = calcMean(forecasts, "temp");
-    const minTemp = calcMin(forecasts, "minTemp");
-    const maxTemp = calcMax(forecasts, "maxTemp");
-    const humidity = calcMean(forecasts, "humidity");
-    const windSpeed = calcMean(forecasts, "windSpeed");
+  describe("tests", () => {
+    beforeEach(() => {
+      render(<ForecastMoreDetails forecasts={forecasts} />);
+    });
 
-    expect(getByText(date)).toBeInstanceOf(HTMLHeadingElement);
-    expect(getByText(new RegExp(temp))).toBeInTheDocument();
-    expect(getByText(new RegExp(minTemp))).toBeInTheDocument();
-    expect(getByText(new RegExp(maxTemp))).toBeInTheDocument();
-    expect(getByText(new RegExp(humidity))).toBeInTheDocument();
-    expect(getByText(new RegExp(windSpeed))).toBeInTheDocument();
+    test("data is properly manipulated", () => {
+      const { getByText } = screen;
+      const date = dateString(forecasts[0].dateTime);
+      const temp = calcMean(forecasts, "temp");
+      const minTemp = calcMin(forecasts, "minTemp");
+      const maxTemp = calcMax(forecasts, "maxTemp");
+      const humidity = calcMean(forecasts, "humidity");
+      const windSpeed = calcMean(forecasts, "windSpeed");
+
+      expect(getByText(date)).toBeInstanceOf(HTMLHeadingElement);
+      expect(getByText(new RegExp(temp))).toBeInTheDocument();
+      expect(getByText(new RegExp(minTemp))).toBeInTheDocument();
+      expect(getByText(new RegExp(maxTemp))).toBeInTheDocument();
+      expect(getByText(new RegExp(humidity))).toBeInTheDocument();
+      expect(getByText(new RegExp(windSpeed))).toBeInTheDocument();
+    });
   });
 });

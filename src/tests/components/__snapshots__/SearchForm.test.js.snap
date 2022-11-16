@@ -17,3 +17,21 @@ exports[`SearchForm including placeHolder snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`SearchForm snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="search-form"
+  >
+    <input
+      placeholder="placeholder"
+      type="text"
+    />
+    <button
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+</DocumentFragment>
+`;

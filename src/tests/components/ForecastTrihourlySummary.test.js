@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ForecastTrihourlySummary from "../../components/ForecastTrihourlySummary";
 
 describe("ForecastTrihourlySummary", () => {
@@ -9,67 +9,85 @@ describe("ForecastTrihourlySummary", () => {
     temp: 34,
     weather: "broken clouds",
   };
-  const { time, icon, temp, weather } = validProps;
+
+  test("snapshot", () => {
+    const { asFragment } = render(
+      <ForecastTrihourlySummary
+        time={validProps.time}
+        icon={validProps.icon}
+        temp={validProps.temp}
+        weather={validProps.weather}
+      />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   describe("all data present", () => {
-    let screen;
-
     beforeEach(() => {
-      screen = render(
+      render(
         <ForecastTrihourlySummary
-          time={time}
-          icon={icon}
-          temp={temp}
-          weather={weather}
+          time={validProps.time}
+          icon={validProps.icon}
+          temp={validProps.temp}
+          weather={validProps.weather}
         />
       );
     });
 
-    test("snapshot", () => {
-      const { asFragment } = screen;
-
-      expect(asFragment()).toMatchSnapshot();
-    });
-
     test("correctly renders props", () => {
       const { getByText, getByTestId } = screen;
-      const description = weather.split(" ");
+      const description = validProps.weather.split(" ");
 
-      expect(getByText(time)).toBeInstanceOf(HTMLParagraphElement);
+      expect(getByText(validProps.time)).toBeInTheDocument();
       expect(getByTestId("forecast-icon")).toContainHTML("i");
-      expect(getByText(new RegExp(description[0]))).toBeInstanceOf(
-        HTMLParagraphElement
-      );
-      expect(getByText(new RegExp(description[1]))).toBeInstanceOf(
-        HTMLParagraphElement
-      );
-      expect(getByText(new RegExp(temp))).toBeInstanceOf(HTMLParagraphElement);
+      expect(getByText(new RegExp(description[0]))).toBeInTheDocument();
+      expect(getByText(new RegExp(description[1]))).toBeInTheDocument();
+      expect(getByText(new RegExp(validProps.temp))).toBeInTheDocument();
     });
   });
 
   describe("missing data", () => {
     test("returns No Data if icon is undefined", () => {
-      const { getByText } = render(
-        <ForecastTrihourlySummary time={time} temp={temp} weather={weather} />
+      render(
+        <ForecastTrihourlySummary
+          time={validProps.time}
+          temp={validProps.temp}
+          weather={validProps.weather}
+        />
       );
+      const { getByText } = screen;
 
-      expect(getByText(/^no.data$/i)).toBeInTheDocument();
+      expect(getByText(/no/i)).toBeInTheDocument();
+      expect(getByText(/data/i)).toBeInTheDocument();
     });
 
     test("returns No Data if weather is undefined", () => {
-      const { getByText } = render(
-        <ForecastTrihourlySummary time={time} temp={temp} icon={icon} />
+      render(
+        <ForecastTrihourlySummary
+          time={validProps.time}
+          temp={validProps.temp}
+          icon={validProps.icon}
+        />
       );
+      const { getByText } = screen;
 
-      expect(getByText(/^no.data$/i)).toBeInTheDocument();
+      expect(getByText(/no/i)).toBeInTheDocument();
+      expect(getByText(/data/i)).toBeInTheDocument();
     });
 
     test("returns No Data if temp is undefined", () => {
-      const { getByText } = render(
-        <ForecastTrihourlySummary time={time} icon={icon} weather={weather} />
+      render(
+        <ForecastTrihourlySummary
+          time={validProps.time}
+          icon={validProps.icon}
+          weather={validProps.weather}
+        />
       );
+      const { getByText } = screen;
 
-      expect(getByText(/^no.data$/i)).toBeInTheDocument();
+      expect(getByText(/no/i)).toBeInTheDocument();
+      expect(getByText(/data/i)).toBeInTheDocument();
     });
   });
 });

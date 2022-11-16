@@ -45,11 +45,9 @@
   display: none;
 }
 
-.options-menu-form__label:has(input:checked) {
-  background-color: var(--dark-blue);
-}
-
-.options-menu-form__label:hover {
+.options-menu-form__label:hover,
+.options-menu-form__label:has(input:checked),
+.options-menu-form__apply:hover  {
   background-color: var(--dark-blue);
 }
 
@@ -63,8 +61,3 @@
   cursor: pointer;
   transition-duration: 200ms;
 }
-
-.options-menu-form__apply:hover {
-  background-color: var(--dark-blue);
-}
-

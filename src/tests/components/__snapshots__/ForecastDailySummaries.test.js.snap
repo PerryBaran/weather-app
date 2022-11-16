@@ -10,9 +10,14 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        Thu 
-        <br />
-         Nov 03
+        <span>
+          Thu
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Nov 03
+        </span>
       </p>
       <div
         class="forecast-daily-summary__icon"
@@ -24,9 +29,14 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        unique1 
-        <br />
-        weather1
+        <span>
+          unique1
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather1
+        </span>
       </p>
       <p>
         10.5°C
@@ -43,9 +53,14 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        Tue 
-        <br />
-         Nov 08
+        <span>
+          Tue
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Nov 08
+        </span>
       </p>
       <div
         class="forecast-daily-summary__icon"
@@ -57,9 +72,14 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        unique3 
-        <br />
-        weather3
+        <span>
+          unique3
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather3
+        </span>
       </p>
       <p>
         12.5°C
@@ -76,9 +96,14 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        Sun 
-        <br />
-         Feb 26
+        <span>
+          Sun
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Feb 26
+        </span>
       </p>
       <div
         class="forecast-daily-summary__icon"
@@ -90,9 +115,152 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        unique5 
-        <br />
-        weather5
+        <span>
+          unique5
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather5
+        </span>
+      </p>
+      <p>
+        14.5°C
+      </p>
+      <button
+        class="forecast-daily-summary__more-details"
+        type="button"
+      >
+        More Details
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ForecastDailySummaries snapshot renders as expected 1`] = `
+<DocumentFragment>
+  <div
+    class="forecast-daily-summaries"
+  >
+    <div
+      class="forecast-daily-summary"
+      data-testid="forecast-daily-summary"
+    >
+      <p>
+        <span>
+          Thu
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Nov 03
+        </span>
+      </p>
+      <div
+        class="forecast-daily-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <i
+          class="wi wi-day-storm-showers"
+          name="owm"
+        />
+      </div>
+      <p>
+        <span>
+          unique1
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather1
+        </span>
+      </p>
+      <p>
+        10.5°C
+      </p>
+      <button
+        class="forecast-daily-summary__more-details"
+        type="button"
+      >
+        More Details
+      </button>
+    </div>
+    <div
+      class="forecast-daily-summary"
+      data-testid="forecast-daily-summary"
+    >
+      <p>
+        <span>
+          Tue
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Nov 08
+        </span>
+      </p>
+      <div
+        class="forecast-daily-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <i
+          class="wi wi-day-sunny"
+          name="owm"
+        />
+      </div>
+      <p>
+        <span>
+          unique3
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather3
+        </span>
+      </p>
+      <p>
+        12.5°C
+      </p>
+      <button
+        class="forecast-daily-summary__more-details"
+        type="button"
+      >
+        More Details
+      </button>
+    </div>
+    <div
+      class="forecast-daily-summary"
+      data-testid="forecast-daily-summary"
+    >
+      <p>
+        <span>
+          Sun
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+           Feb 26
+        </span>
+      </p>
+      <div
+        class="forecast-daily-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <i
+          class="wi wi-day-snow"
+          name="owm"
+        />
+      </div>
+      <p>
+        <span>
+          unique5
+        </span>
+        <span
+          class="forecast-daily-summary__line-break"
+        >
+          weather5
+        </span>
       </p>
       <p>
         14.5°C

@@ -1,39 +1,49 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import LocationDetails from "../../components/LocationDetails";
 
 describe("LocationDetails", () => {
-  const location = "Leeds, GB";
+  const validProps = {
+    location: "Leeds, GB",
+    errMessage: "Oopsies, an error",
+  };
+
+  test("snapshot", () => {
+    const { asFragment } = render(
+      <LocationDetails location={validProps.location} />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   describe("no error message", () => {
-    let screen;
-
     beforeEach(() => {
-      screen = render(<LocationDetails location={location} />);
-    });
-
-    test("snapshot", () => {
-      const { asFragment } = screen;
-
-      expect(asFragment()).toMatchSnapshot();
+      render(<LocationDetails location={validProps.location} />);
     });
 
     test("correctly renders props", () => {
       const { getByText } = screen;
 
-      expect(getByText(location)).toBeInstanceOf(HTMLHeadingElement);
+      expect(getByText(validProps.location)).toBeInstanceOf(HTMLHeadingElement);
     });
   });
 
   describe("error message", () => {
-    test("if passed no falsey error message - renders that instead of location", () => {
-      const errMessage = "Oopsies an error";
-      const { queryByText } = render(
-        <LocationDetails location={location} errMessage={errMessage} />
+    beforeEach(() => {
+      render(
+        <LocationDetails
+          location={validProps.location}
+          errMessage={validProps.errMessage}
+        />
       );
+    });
+    test("if passed no falsey error message - renders that instead of location", () => {
+      const { queryByText } = screen;
 
-      expect(queryByText(errMessage)).toBeInstanceOf(HTMLHeadingElement);
-      expect(queryByText(location)).not.toBeInTheDocument();
+      expect(queryByText(validProps.errMessage)).toBeInstanceOf(
+        HTMLHeadingElement
+      );
+      expect(queryByText(validProps.location)).not.toBeInTheDocument();
     });
   });
 });

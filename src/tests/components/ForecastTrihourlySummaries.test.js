@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ForecastTrihourlySummaries from "../../components/ForecastTrihourlySummaries";
 
 describe("ForecastTrihourlySummaries", () => {
@@ -27,31 +27,35 @@ describe("ForecastTrihourlySummaries", () => {
       windSpeed: 99,
     },
   ];
-  let screen;
-
-  beforeEach(() => {
-    screen = render(<ForecastTrihourlySummaries forecasts={forecasts} />);
-  });
 
   test("snapshot", () => {
-    const { asFragment } = screen;
+    const { asFragment } = render(
+      <ForecastTrihourlySummaries forecasts={forecasts} />
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("ForecastTrihourlySummary is called correct number of times, for every 3 hours for 1 day", () => {
-    const { getAllByTestId, getByText } = screen;
-    const FORECAST_INTERVAL = 3;
-    const FORECASTS_PER_DAY = 24 / FORECAST_INTERVAL;
+  describe("tests", () => {
+    beforeEach(() => {
+      render(<ForecastTrihourlySummaries forecasts={forecasts} />);
+    });
 
-    expect(getAllByTestId("forecast-trihourly-summary")).toHaveLength(
-      FORECASTS_PER_DAY
-    );
+    test("ForecastTrihourlySummary is called correct number of times, for every 3 hours for 1 day", () => {
+      const { getAllByTestId, getByText } = screen;
+      const FORECAST_INTERVAL = 3;
+      const FORECASTS_PER_DAY = 24 / FORECAST_INTERVAL;
 
-    for (let i = 0; i < FORECASTS_PER_DAY; i += 1) {
-      let time = `${i * FORECAST_INTERVAL}:00`;
-      if (time.length === 4) time = `0${time}`;
-      expect(getByText(time)).toBeInTheDocument();
-    }
+      expect(getAllByTestId("forecast-trihourly-summary")).toHaveLength(
+        FORECASTS_PER_DAY
+      );
+
+      for (let i = 0; i < FORECASTS_PER_DAY; i += 1) {
+        let time = `${i * FORECAST_INTERVAL}:00`;
+        if (time.length === 4) time = `0${time}`;
+
+        expect(getByText(time)).toBeInTheDocument();
+      }
+    });
   });
 });

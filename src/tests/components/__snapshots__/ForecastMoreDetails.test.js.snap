@@ -37,7 +37,9 @@ exports[`ForecastMoreDetails snapshot 1`] = `
             °C
           </sup>
         </p>
-        <div>
+        <div
+          class="forecast-breakdown__min-temp"
+        >
           <h3>
             Min: 
           </h3>
@@ -45,7 +47,9 @@ exports[`ForecastMoreDetails snapshot 1`] = `
             27.0°C
           </p>
         </div>
-        <div>
+        <div
+          class="forecast-breakdown__max-temp"
+        >
           <h3>
             Max: 
           </h3>
@@ -53,7 +57,9 @@ exports[`ForecastMoreDetails snapshot 1`] = `
             32.0°C
           </p>
         </div>
-        <div>
+        <div
+          class="forecast-breakdown__humidity"
+        >
           <h3>
             Humidity: 
           </h3>
@@ -61,7 +67,9 @@ exports[`ForecastMoreDetails snapshot 1`] = `
             NaN%
           </p>
         </div>
-        <div>
+        <div
+          class="forecast-breakdown__wind-speed"
+        >
           <h3>
             Wind Speed: 
           </h3>
@@ -82,9 +90,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           00:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
       <div
@@ -95,9 +108,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           03:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
       <div
@@ -108,9 +126,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           06:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
       <div
@@ -121,9 +144,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           09:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
       <div
@@ -143,9 +171,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           />
         </div>
         <p>
-          broken 
-          <br />
-          clouds
+          <span>
+            broken
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            clouds
+          </span>
         </p>
         <p>
           35.0°C
@@ -168,9 +201,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           />
         </div>
         <p>
-          light 
-          <br />
-          rain
+          <span>
+            light
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            rain
+          </span>
         </p>
         <p>
           25.0°C
@@ -184,9 +222,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           18:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
       <div
@@ -197,9 +240,14 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           21:00
         </p>
         <p>
-          No 
-          <br />
-          Data
+          <span>
+            No
+          </span>
+          <span
+            class="forecast-trihourly-summary__line-break"
+          >
+            Data
+          </span>
         </p>
       </div>
     </div>

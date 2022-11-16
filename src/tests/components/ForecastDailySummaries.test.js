@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ForecastDailySummaries from "../../components/ForecastDailySummaries";
 import { calcMean } from "../../helpers/calculateValues";
 import dateString from "../../helpers/dateString";
@@ -52,47 +52,52 @@ describe("ForecastDailySummaries", () => {
     ],
     handleForecastSelect: () => {},
   };
-  const { forecasts, handleForecastSelect } = validProps;
-  let screen;
-
-  beforeEach(() => {
-    screen = render(
-      <ForecastDailySummaries
-        forecasts={forecasts}
-        handleForecastSelect={handleForecastSelect}
-      />
-    );
-  });
 
   test("snapshot", () => {
-    const { asFragment } = screen;
+    const { asFragment } = render(
+      <ForecastDailySummaries
+        forecasts={validProps.forecasts}
+        handleForecastSelect={validProps.handleForecastSelect}
+      />
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("ForecastDailySummary is called correct amount of times", () => {
-    const { getAllByTestId } = screen;
+  describe("tests", () => {
+    beforeEach(() => {
+      render(
+        <ForecastDailySummaries
+          forecasts={validProps.forecasts}
+          handleForecastSelect={validProps.handleForecastSelect}
+        />
+      );
+    });
 
-    expect(getAllByTestId("forecast-daily-summary")).toHaveLength(
-      forecasts.length
-    );
-  });
+    test("ForecastDailySummary is called correct amount of times", () => {
+      const { getAllByTestId } = screen;
 
-  test("data is properly manipulated", () => {
-    const { queryByText } = screen;
+      expect(getAllByTestId("forecast-daily-summary")).toHaveLength(
+        validProps.forecasts.length
+      );
+    });
 
-    forecasts.forEach((forecast) => {
-      const temp = calcMean(forecast, "temp");
-      const date0 = dateString(forecast[0].dateTime).slice(3, 10);
-      const description0 = forecast[0].weather.split(" ")[0];
-      const date1 = dateString(forecast[1].dateTime).slice(3, 10);
-      const description1 = forecast[1].weather.split(" ")[0];
+    test("data is properly manipulated", () => {
+      const { queryByText } = screen;
 
-      expect(queryByText(new RegExp(temp))).toBeInTheDocument();
-      expect(queryByText(new RegExp(date0))).toBeInTheDocument();
-      expect(queryByText(new RegExp(description0))).toBeInTheDocument();
-      expect(queryByText(new RegExp(date1))).not.toBeInTheDocument();
-      expect(queryByText(new RegExp(description1))).not.toBeInTheDocument();
+      validProps.forecasts.forEach((forecast) => {
+        const temp = calcMean(forecast, "temp");
+        const date0 = dateString(forecast[0].dateTime).slice(4, 10);
+        const description0 = forecast[0].weather.split(" ")[0];
+        const date1 = dateString(forecast[1].dateTime).slice(4, 10);
+        const description1 = forecast[1].weather.split(" ")[0];
+
+        expect(queryByText(new RegExp(temp))).toBeInTheDocument();
+        expect(queryByText(new RegExp(date0))).toBeInTheDocument();
+        expect(queryByText(new RegExp(description0))).toBeInTheDocument();
+        expect(queryByText(new RegExp(date1))).not.toBeInTheDocument();
+        expect(queryByText(new RegExp(description1))).not.toBeInTheDocument();
+      });
     });
   });
 });

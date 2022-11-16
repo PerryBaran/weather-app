@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import ForecastDailySummary from "../../components/ForecastDailySummary";
 import dateString from "../../helpers/dateString";
 
@@ -11,58 +11,60 @@ describe("ForecastDailySummary", () => {
     temp: "20",
     handleForecastSelect: jest.fn(),
   };
-  const { dateTime, weather, icon, temp, handleForecastSelect } = validProps;
-  let screen;
-
-  beforeEach(() => {
-    screen = render(
-      <ForecastDailySummary
-        dateTime={dateTime}
-        weather={weather}
-        icon={icon}
-        temp={temp}
-        handleForecastSelect={handleForecastSelect}
-      />
-    );
-  });
 
   test("snapshot", () => {
-    const { asFragment } = screen;
+    const { asFragment } = render(
+      <ForecastDailySummary
+        dateTime={validProps.dateTime}
+        weather={validProps.weather}
+        icon={validProps.icon}
+        temp={validProps.temp}
+        handleForecastSelect={validProps.handleForecastSelect}
+      />
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("correctly renders props", () => {
-    const { getByText, getByTestId } = screen;
-    const date = dateString(dateTime);
-    const dayOfTheWeek = date.slice(0, 3);
-    const monthAndDay = date.slice(3, 10);
-    const description = weather.split(" ");
+  describe("tests", () => {
+    beforeEach(() => {
+      render(
+        <ForecastDailySummary
+          dateTime={validProps.dateTime}
+          weather={validProps.weather}
+          icon={validProps.icon}
+          temp={validProps.temp}
+          handleForecastSelect={validProps.handleForecastSelect}
+        />
+      );
+    });
 
-    expect(getByText(new RegExp(dayOfTheWeek))).toBeInstanceOf(
-      HTMLParagraphElement
-    );
-    expect(getByText(new RegExp(monthAndDay))).toBeInstanceOf(
-      HTMLParagraphElement
-    );
-    expect(getByTestId("forecast-icon")).toContainHTML("i");
-    expect(getByText(new RegExp(description[0]))).toBeInstanceOf(
-      HTMLParagraphElement
-    );
-    expect(getByText(new RegExp(description[1]))).toBeInstanceOf(
-      HTMLParagraphElement
-    );
-    expect(getByText(new RegExp(temp))).toBeInstanceOf(HTMLParagraphElement);
-  });
+    test("correctly renders props", () => {
+      const { getByText, getByTestId } = screen;
+      const date = dateString(validProps.dateTime);
+      const dayOfTheWeek = date.slice(0, 3);
+      const monthAndDay = date.slice(4, 10);
+      const description = validProps.weather.split(" ");
 
-  test("button", () => {
-    const { getByText } = screen;
-    const button = getByText(/more details/i);
+      expect(getByText(new RegExp(dayOfTheWeek))).toBeInTheDocument();
+      expect(getByText(new RegExp(monthAndDay))).toBeInTheDocument();
+      expect(getByTestId("forecast-icon")).toContainHTML("i");
+      expect(getByText(new RegExp(description[0]))).toBeInTheDocument();
+      expect(getByText(new RegExp(description[1]))).toBeInTheDocument();
+      expect(getByText(new RegExp(validProps.temp))).toBeInTheDocument();
+    });
 
-    expect(button).toBeInstanceOf(HTMLButtonElement);
-    expect(handleForecastSelect).toBeCalledTimes(0);
-    fireEvent.click(button);
-    expect(handleForecastSelect).toBeCalledTimes(1);
-    expect(handleForecastSelect).toBeCalledWith(dateTime);
+    test("button", () => {
+      const { getByText } = screen;
+      const button = getByText(/more details/i);
+
+      expect(button).toBeInstanceOf(HTMLButtonElement);
+      expect(validProps.handleForecastSelect).toBeCalledTimes(0);
+      fireEvent.click(button);
+      expect(validProps.handleForecastSelect).toBeCalledTimes(1);
+      expect(validProps.handleForecastSelect).toBeCalledWith(
+        validProps.dateTime
+      );
+    });
   });
 });

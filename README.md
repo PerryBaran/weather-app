@@ -2,9 +2,19 @@
 
 Weather app that interacts with an OpenWeatherMap API to get up to date weather forecast and displays that data using React.
 
+Weather forecast works globally.\
+To get a forecast search for a specific city. To be more specific, you can include an optional country code (e.g. "London" or "London, CA").\
+Weather data is retrieved trihourly. The daily weather forecast works out the mean temperatures but displays the weather condition (e.g. "broken clouds") and icon of the first data-set for that day.\
+When clicking more details, a forecast breakdown is shown with temperature, min-temperature, max-temperature, wind speed and humidity calculated as means. The weather condition and icon displayed are from the first data-set of that day.\
+The trihourly summary displays the forecast for every 3 hours. If no data is present for that time, 'No Data' is rendered in its place.
+
 Created as part of the Manchester Codes full-stack web development boot-camp.
 
 ## [Live Preview](https://perrybaran.github.io/weather-app)
+
+![desktop view](./public/images/weather-desktop.png)
+
+![mobile view](./public/images/weather-mobile.png)
 
 ## Table of Contents
 
@@ -12,7 +22,6 @@ Created as part of the Manchester Codes full-stack web development boot-camp.
 2. [Setup](#setup)
 3. [Commands](#commands)
 4. [Attribution](#attribution)
-
 
 ## Dependencies
 

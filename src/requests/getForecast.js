@@ -9,7 +9,7 @@ const getForecast = async (
   location,
   units
 ) => {
-  const endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&APPID=d1cad75804f6bd996f5d83905ac66876`;
+  const endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&APPID=${process.env.REACT_APP_API_KEY}`;
   try {
     const response = await axios.get(endpoint);
     const {
