@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import axios from "axios";
-import mockData from "../../data/forecastData.json";
+import mockData from "../data/forecastData.json";
 import App from "../../components/App";
 
 describe("App", () => {

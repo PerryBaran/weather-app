@@ -5,7 +5,7 @@ import menu from "../images/menu.png";
 import OptionsMenu from "./OptionsMenu";
 import useDelayedUnmount from "../hooks/useDelayedUnmount";
 
-function DropDownMenu({ handleSearch }) {
+function DropDownMenu() {
   const [visible, setVisible] = useState(false);
   const mount = useDelayedUnmount(visible, 500);
 
@@ -29,15 +29,11 @@ function DropDownMenu({ handleSearch }) {
           }`}
           data-testid="drop-down-menu"
         >
-          <OptionsMenu handleSearch={handleSearch} setVisible={setVisible} />
+          <OptionsMenu setVisible={setVisible} />
         </div>
       )}
     </>
   );
 }
-
-DropDownMenu.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
-};
 
 export default DropDownMenu;

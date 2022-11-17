@@ -1,40 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForecastTrihourlySummary all data present snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="forecast-trihourly-summary"
-    data-testid="forecast-trihourly-summary"
-  >
-    <p>
-      15:00
-    </p>
-    <div
-      class="forecast-trihourly-summary__icon"
-      data-testid="forecast-icon"
-    >
-      <i
-        class="wi wi-day-storm-showers"
-        name="owm"
-      />
-    </div>
-    <p>
-      <span>
-        broken
-      </span>
-      <span
-        class="forecast-trihourly-summary__line-break"
-      >
-        clouds
-      </span>
-    </p>
-    <p>
-      34.0°C
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`ForecastTrihourlySummary snapshot 1`] = `
 <DocumentFragment>
   <div

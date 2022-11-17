@@ -3,17 +3,15 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import DropDownMenu from "../../components/DropDownMenu";
 
 describe("DropDownMenu", () => {
-  const handleSearch = jest.fn();
-
   test("snapshot", () => {
-    const { asFragment } = render(<DropDownMenu handleSearch={handleSearch} />);
+    const { asFragment } = render(<DropDownMenu />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   describe("tests", () => {
     beforeEach(() => {
-      render(<DropDownMenu handleSearch={handleSearch} />);
+      render(<DropDownMenu />);
     });
 
     test("image", () => {

@@ -13,17 +13,3 @@ exports[`DropDownMenu snapshot 1`] = `
   </button>
 </DocumentFragment>
 `;
-
-exports[`DropDownMenu snapshot renders as expected 1`] = `
-<DocumentFragment>
-  <button
-    class="drop-down-menu-button"
-    type="button"
-  >
-    <img
-      alt="hamburger menu"
-      src="menu.png"
-    />
-  </button>
-</DocumentFragment>
-`;

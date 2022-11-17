@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../styles/OptionsMenu.css";
 import useUnitContext from "../hooks/useUnitContext";
 
-function OptionsMenu({ handleSearch, setVisible }) {
+function OptionsMenu({ setVisible }) {
   const { units, setUnits } = useUnitContext();
   const [selectedUnits, setSelectedUnits] = useState(units);
   const changeHandler = (e) => {
@@ -13,7 +13,6 @@ function OptionsMenu({ handleSearch, setVisible }) {
   const handleApply = (e) => {
     e.preventDefault();
     setUnits(selectedUnits);
-    handleSearch(undefined, selectedUnits);
     setVisible(false);
   };
 
@@ -68,7 +67,6 @@ function OptionsMenu({ handleSearch, setVisible }) {
 }
 
 OptionsMenu.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
   setVisible: PropTypes.func.isRequired,
 };
 

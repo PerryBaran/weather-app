@@ -8,7 +8,7 @@ function TopBar({ handleSearch, location }) {
   return (
     <div className="top-bar">
       <SearchForm handleSearch={handleSearch} placeholder={location} />
-      <DropDownMenu handleSearch={handleSearch} />
+      <DropDownMenu />
     </div>
   );
 }

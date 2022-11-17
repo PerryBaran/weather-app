@@ -5,7 +5,9 @@ exports[`ForecastMoreDetails snapshot 1`] = `
   <div
     class="forecast-details"
   >
-    <h2>
+    <h2
+      class="forecast-details__heading"
+    >
       Thu Nov 03 2022
     </h2>
     <div

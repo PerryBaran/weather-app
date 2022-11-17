@@ -10,6 +10,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 function App() {
   const [location, setLocation] = useLocalStorage("location", "London, GB");
+  const [search, setSearch] = useState(location);
   const [forecasts, setForecasts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(0);
   const [errMessage, setErrMessage] = useState("");
@@ -19,24 +20,20 @@ function App() {
     (forecast) => forecast[0].dateTime === selectedDate
   );
 
-  const handleCitySearch = (locationInput, unitsInput) => {
-    const selectedLocation = locationInput || location;
-    const selectedUnits = unitsInput || units;
+  const handleCitySearch = (value) => {
+    setSearch(value);
+  };
 
+  useEffect(() => {
     getForecast(
       setLocation,
       setForecasts,
       setSelectedDate,
       setErrMessage,
-      selectedLocation,
-      selectedUnits
+      search,
+      units
     );
-  };
-
-  useEffect(() => {
-    handleCitySearch();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [search, units, setLocation]);
 
   return (
     <div className="weather-app">

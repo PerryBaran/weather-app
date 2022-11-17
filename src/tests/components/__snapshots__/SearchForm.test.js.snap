@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchForm including placeHolder snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="search-form"
-  >
-    <input
-      placeholder="placeholder"
-      type="text"
-    />
-    <button
-      type="submit"
-    >
-      Search
-    </button>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`SearchForm snapshot 1`] = `
 <DocumentFragment>
   <div

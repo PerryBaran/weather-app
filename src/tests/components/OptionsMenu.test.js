@@ -1,5 +1,6 @@
-import React from "react";
+import React, {createContext, useContext} from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
+import * as useUnitContext from "../../hooks/useUnitContext";
 import OptionsMenu from "../../components/OptionsMenu";
 
 const findRadio = (radios, value) => {
@@ -8,16 +9,12 @@ const findRadio = (radios, value) => {
 
 describe("OptionsMenu", () => {
   const validProps = {
-    handleSearch: jest.fn(),
     setVisible: jest.fn(),
   };
 
   test("snapshot", () => {
     const { asFragment } = render(
-      <OptionsMenu
-        handleSearch={validProps.handleSearch}
-        setVisible={validProps.setVisible}
-      />
+      <OptionsMenu setVisible={validProps.setVisible} />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -25,12 +22,7 @@ describe("OptionsMenu", () => {
 
   describe("tests", () => {
     beforeEach(() => {
-      render(
-        <OptionsMenu
-          handleSearch={validProps.handleSearch}
-          setVisible={validProps.setVisible}
-        />
-      );
+      render(<OptionsMenu setVisible={validProps.setVisible} />);
     });
 
     test("all fields correctly rendered", () => {
@@ -54,6 +46,31 @@ describe("OptionsMenu", () => {
       expect(apply).toHaveTextContent(/apply/i);
     });
 
+    test("apply button calls setVisible", () => {
+      const { getByRole } = screen;
+      const apply = getByRole("button");
+
+      expect(validProps.setVisible).toBeCalledTimes(0);
+      fireEvent.click(apply);
+      expect(validProps.setVisible).toBeCalledWith(false);
+    });
+  });
+
+  describe("mocked useContext", () => {
+    let mockSetUnits;
+
+    beforeEach(() => {
+      mockSetUnits = jest.fn();
+      const mockUnitContext = createContext({
+        units: "metric",
+        setUnits: mockSetUnits,
+      });
+      jest
+        .spyOn(useUnitContext, "default")
+        .mockImplementation(() => useContext(mockUnitContext));
+      render(<OptionsMenu setVisible={validProps.setVisible} />);
+    });
+
     test("selecting units", () => {
       const { getByRole, getAllByRole } = screen;
       const [standard, metric, imperial] = getAllByRole("radio");
@@ -64,28 +81,19 @@ describe("OptionsMenu", () => {
       expect(metric).not.toBeChecked();
       expect(imperial).not.toBeChecked();
       fireEvent.click(apply);
-      expect(validProps.handleSearch).toBeCalledWith(undefined, standard.value);
+      expect(mockSetUnits).toBeCalledWith(standard.value);
       fireEvent.click(metric);
       expect(standard).not.toBeChecked();
       expect(metric).toBeChecked();
       expect(imperial).not.toBeChecked();
       fireEvent.click(apply);
-      expect(validProps.handleSearch).toBeCalledWith(undefined, metric.value);
+      expect(mockSetUnits).toBeCalledWith(metric.value);
       fireEvent.click(imperial);
       expect(standard).not.toBeChecked();
       expect(metric).not.toBeChecked();
       expect(imperial).toBeChecked();
       fireEvent.click(apply);
-      expect(validProps.handleSearch).toBeCalledWith(undefined, imperial.value);
-    });
-
-    test("apply button calls setVisible", () => {
-      const { getByRole } = screen;
-      const apply = getByRole("button");
-
-      expect(validProps.setVisible).toBeCalledTimes(0);
-      fireEvent.click(apply);
-      expect(validProps.setVisible).toBeCalledWith(false);
+      expect(mockSetUnits).toBeCalledWith(imperial.value);
     });
   });
 });

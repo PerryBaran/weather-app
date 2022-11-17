@@ -2,22 +2,33 @@
 
 Weather app that interacts with an OpenWeatherMap API to get up to date weather forecast and displays that data using React.
 
-Weather forecast works globally. Forecast data return for the specified city. To be more specific, you can include an optional country code (e.g. "London" or "London, CA"). Weather data is retrieved trihourly. The daily weather forecast works out the mean temperatures but displays the weather condition (e.g. "broken clouds") and icon of the first data-set for that day. When clicking more details, a forecast breakdown is shown with temperature, min-temperature, max-temperature, wind speed and humidity calculated as means. The weather condition and icon displayed are from the first data-set of that day. The trihourly summary displays the forecast for every 3 hours. If no data is present for that time, 'No Data' is rendered in its place.
-
 Created as part of the Manchester Codes full-stack web development boot-camp.
+
+
+## Table of Contents
+
+1. [Features](#features)
+1. [Live Preview](#live%20preview)
+2. [Dependencies](#dependencies)
+3. [Setup](#setup)
+4. [Commands](#commands)
+5. [Attribution](#attribution)
+
+## Features
+
+- Uses OpenWeatherMap API to provide global weather forecast data.
+- To get a forecast search for a city or town. An optional country code can be added to further specify the location (e.g. "London" and "London, CA").
+- API provides data on a tri-hourly basis for 5-days. Because of how the forecast is retrieved this usually leads to a 6 day forecast, with missing data sets for the beginning of the first day and end of the last. For more information about the API please visit [OpenWeatherMap](https://openweathermap.org/current).
+- The daily-summary displays the mean temp for that day and the first weather condition from the dataset for that day. 
+- The forecast breakdown shows the calculated mean temperature, humidity and wind speed, and calculated max and minimum temperatures from all datasets for that day and the first weather condition from the dataset for that day.
+- The tri-hourly forecast shows the retrieved mean temperature and weather condition for the three hour period. If no data is retrieved for a given period, "No Data" is shown in its place.
+- The units of the retrieved data can be changed from the drop-down options menu. Available units are standard (K, m/s), metric (°C, m/s) or imperial (°F, mph).
 
 ## [Live Preview](https://perrybaran.github.io/weather-app)
 
 ![desktop view](./public/images/weather-desktop.png)
 
 ![mobile view](./public/images/weather-mobile.png)
-
-## Table of Contents
-
-1. [Dependencies](#dependencies)
-2. [Setup](#setup)
-3. [Commands](#commands)
-4. [Attribution](#attribution)
 
 ## Dependencies
 
@@ -35,6 +46,13 @@ Created as part of the Manchester Codes full-stack web development boot-camp.
 ## Setup
 
 ### Install Dependencies
+
+1. Clone the repo to a local file.
+
+```
+$ git clone https://github.com/PerryBaran/weather-app
+```
+2. Install all dependencies.
 
 ```
 $ npm i
@@ -63,22 +81,6 @@ $ npm build
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-```
-$ npm eject
-```
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ```
 $ npm run lint:fix
 ```
@@ -88,14 +90,12 @@ Runs eslint on all files to format code.
 ```
 $ npm run predeploy
 ```
-helps to bundle the react app.
-This command is run automatically when running deploy.
+helps to bundle the react app. This command is run automatically when running deploy.
 
 ```
 $ npm run deploy
 ```
 Generates a production build of the app and deploys it to GitHub pages.
-
 
 ## Attribution
 
