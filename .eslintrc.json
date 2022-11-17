@@ -1,5 +1,5 @@
 {
-  "root":true,
+  "root": true,
   "env": {
     "browser": true,
     "es2020": true,
@@ -22,9 +22,7 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "rules": {
     "quotes": [0],
     "react/jsx-props-no-spreading": [0],
@@ -35,6 +33,6 @@
       }
     ],
     "prettier/prettier": "warn",
-    "no-unused-vars":"warn"
+    "no-unused-vars": "warn"
   }
 }

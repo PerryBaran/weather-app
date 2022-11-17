@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "npx eslint ./src --ext .js --fix",
+    "prettier": "npx prettier --write .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

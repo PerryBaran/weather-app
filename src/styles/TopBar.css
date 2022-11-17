@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  height: var(--top-bar-height);  
+  height: var(--top-bar-height);
   padding: 10px 10px;
   border-bottom: var(--top-bar-border);
   background-color: var(--medium-blue);

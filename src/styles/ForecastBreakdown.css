@@ -13,7 +13,7 @@
   align-items: flex-start;
 }
 
-.forecast-breakdown__left h3, 
+.forecast-breakdown__left h3,
 .forecast-breakdown__left h3 + p {
   display: inline;
   font-size: inherit;

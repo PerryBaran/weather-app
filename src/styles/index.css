@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0.5);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.5);
   font-family: Anonymous-Pro, Arial, Helvetica, sans-serif;
   color: var(--almost-black);
 }
