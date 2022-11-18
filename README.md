@@ -7,11 +7,10 @@ Created as part of the Manchester Codes full-stack web development boot-camp.
 ## Table of Contents
 
 1. [Features](#features)
-1. [Live Preview](#live preview)
-1. [Dependencies](#dependencies)
-1. [Setup](#setup)
-1. [Commands](#commands)
-1. [Attribution](#attribution)
+2. [Dependencies](#dependencies)
+3. [Setup](#setup)
+4. [Commands](#commands)
+5. [Attribution](#attribution)
 
 ## Features
 
