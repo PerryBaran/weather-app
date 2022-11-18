@@ -7,7 +7,7 @@ Created as part of the Manchester Codes full-stack web development boot-camp.
 ## Table of Contents
 
 1. [Features](#features)
-1. [Live Preview](#live%20preview)
+1. [Live Preview](#live preview)
 1. [Dependencies](#dependencies)
 1. [Setup](#setup)
 1. [Commands](#commands)
