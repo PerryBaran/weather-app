@@ -18,7 +18,7 @@ function ForecastTrihourlySummary({ time, weather, icon, temp }) {
       <p>{time}</p>
       {!icon || !weather || !temp ? (
         <p>
-          <span>No</span>
+          No
           <span className="forecast-trihourly-summary__line-break">Data</span>
         </p>
       ) : (
@@ -30,7 +30,7 @@ function ForecastTrihourlySummary({ time, weather, icon, temp }) {
             <WeatherIcon name="owm" iconId={icon} />
           </div>
           <p>
-            <span>{weatherDescription[0]}</span>
+            {weatherDescription[0]}
             <span className="forecast-trihourly-summary__line-break">
               {weatherDescription[1]}
             </span>

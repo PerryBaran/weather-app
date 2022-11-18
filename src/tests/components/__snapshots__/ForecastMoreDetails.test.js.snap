@@ -92,9 +92,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           00:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -110,9 +108,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           03:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -128,9 +124,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           06:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -146,9 +140,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           09:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -173,9 +165,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           />
         </div>
         <p>
-          <span>
-            broken
-          </span>
+          broken
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -203,9 +193,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           />
         </div>
         <p>
-          <span>
-            light
-          </span>
+          light
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -224,9 +212,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           18:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >
@@ -242,9 +228,7 @@ exports[`ForecastMoreDetails snapshot 1`] = `
           21:00
         </p>
         <p>
-          <span>
-            No
-          </span>
+          No
           <span
             class="forecast-trihourly-summary__line-break"
           >

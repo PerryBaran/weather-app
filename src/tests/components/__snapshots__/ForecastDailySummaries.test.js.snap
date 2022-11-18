@@ -10,9 +10,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        <span>
-          Thu
-        </span>
+        Thu
         <span
           class="forecast-daily-summary__line-break"
         >
@@ -29,9 +27,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        <span>
-          unique1
-        </span>
+        unique1
         <span
           class="forecast-daily-summary__line-break"
         >
@@ -53,9 +49,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        <span>
-          Tue
-        </span>
+        Tue
         <span
           class="forecast-daily-summary__line-break"
         >
@@ -72,9 +66,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        <span>
-          unique3
-        </span>
+        unique3
         <span
           class="forecast-daily-summary__line-break"
         >
@@ -96,9 +88,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
       data-testid="forecast-daily-summary"
     >
       <p>
-        <span>
-          Sun
-        </span>
+        Sun
         <span
           class="forecast-daily-summary__line-break"
         >
@@ -115,9 +105,7 @@ exports[`ForecastDailySummaries snapshot 1`] = `
         />
       </div>
       <p>
-        <span>
-          unique5
-        </span>
+        unique5
         <span
           class="forecast-daily-summary__line-break"
         >

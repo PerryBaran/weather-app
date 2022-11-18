@@ -19,9 +19,7 @@ exports[`ForecastTrihourlySummary snapshot 1`] = `
       />
     </div>
     <p>
-      <span>
-        broken
-      </span>
+      broken
       <span
         class="forecast-trihourly-summary__line-break"
       >

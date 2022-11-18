@@ -7,9 +7,7 @@ exports[`ForecastDailySummary snapshot 1`] = `
     data-testid="forecast-daily-summary"
   >
     <p>
-      <span>
-        Thu
-      </span>
+      Thu
       <span
         class="forecast-daily-summary__line-break"
       >
@@ -26,9 +24,7 @@ exports[`ForecastDailySummary snapshot 1`] = `
       />
     </div>
     <p>
-      <span>
-        broken
-      </span>
+      broken
       <span
         class="forecast-daily-summary__line-break"
       >

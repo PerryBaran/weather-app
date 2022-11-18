@@ -27,7 +27,7 @@ function ForecastDailySummary({
       data-testid="forecast-daily-summary"
     >
       <p>
-        <span>{dayOfTheWeek}</span>
+        {dayOfTheWeek}
         <span className="forecast-daily-summary__line-break">
           {monthAndDay}
         </span>
@@ -36,7 +36,7 @@ function ForecastDailySummary({
         <WeatherIcon name="owm" iconId={icon} />
       </div>
       <p>
-        <span>{weatherDescription[0]}</span>
+        {weatherDescription[0]}
         <span className="forecast-daily-summary__line-break">
           {weatherDescription[1]}
         </span>
