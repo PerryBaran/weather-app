@@ -1,6 +1,6 @@
 # Weather App
 
-Weather app that interacts with an OpenWeatherMap API to get up to date weather forecast and displays that data using React.
+Weather app that interacts with an OpenWeatherMap API to get up to date weather forecast data and displays it using React.
 
 Created as part of the Manchester Codes full-stack web development boot-camp.
 
